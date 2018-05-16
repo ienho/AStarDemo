@@ -8,24 +8,44 @@
 
 /* Begin PBXBuildFile section */
 		182C6CFA20ABC4BB00D8AD5D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 182C6CF920ABC4BB00D8AD5D /* AppDelegate.m */; };
-		182C6CFD20ABC4BB00D8AD5D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 182C6CFC20ABC4BB00D8AD5D /* ViewController.m */; };
-		182C6D0020ABC4BB00D8AD5D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 182C6CFE20ABC4BB00D8AD5D /* Main.storyboard */; };
 		182C6D0220ABC4BC00D8AD5D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 182C6D0120ABC4BC00D8AD5D /* Assets.xcassets */; };
 		182C6D0520ABC4BC00D8AD5D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 182C6D0320ABC4BC00D8AD5D /* LaunchScreen.storyboard */; };
 		182C6D0820ABC4BC00D8AD5D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 182C6D0720ABC4BC00D8AD5D /* main.m */; };
+		182C6D2F20AC542300D8AD5D /* AFindMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 182C6D2220AC542200D8AD5D /* AFindMap.m */; };
+		182C6D3020AC542300D8AD5D /* AStarViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 182C6D2620AC542200D8AD5D /* AStarViewModel.m */; };
+		182C6D3120AC542300D8AD5D /* DFS.m in Sources */ = {isa = PBXBuildFile; fileRef = 182C6D2820AC542200D8AD5D /* DFS.m */; };
+		182C6D3220AC542300D8AD5D /* Dijkstra.m in Sources */ = {isa = PBXBuildFile; fileRef = 182C6D2A20AC542200D8AD5D /* Dijkstra.m */; };
+		182C6D3320AC542300D8AD5D /* PathfindingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 182C6D2B20AC542200D8AD5D /* PathfindingViewController.m */; };
+		182C6D3420AC542300D8AD5D /* AStar.m in Sources */ = {isa = PBXBuildFile; fileRef = 182C6D2D20AC542200D8AD5D /* AStar.m */; };
+		182C6D3520AC542300D8AD5D /* BFS.m in Sources */ = {isa = PBXBuildFile; fileRef = 182C6D2E20AC542200D8AD5D /* BFS.m */; };
+		6DB0EA39C02FE39197F17AA1 /* Pods_AStarDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7912146A25A321B0CA2CA74C /* Pods_AStarDemo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		03039108CD8FBC009949079F /* Pods-AStarDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AStarDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-AStarDemo/Pods-AStarDemo.release.xcconfig"; sourceTree = "<group>"; };
 		182C6CF520ABC4BB00D8AD5D /* AStarDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AStarDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		182C6CF820ABC4BB00D8AD5D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		182C6CF920ABC4BB00D8AD5D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		182C6CFB20ABC4BB00D8AD5D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		182C6CFC20ABC4BB00D8AD5D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		182C6CFF20ABC4BB00D8AD5D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		182C6D0120ABC4BC00D8AD5D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		182C6D0420ABC4BC00D8AD5D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		182C6D0620ABC4BC00D8AD5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		182C6D0720ABC4BC00D8AD5D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		182C6D2120AC542200D8AD5D /* Dijkstra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dijkstra.h; sourceTree = "<group>"; };
+		182C6D2220AC542200D8AD5D /* AFindMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFindMap.m; sourceTree = "<group>"; };
+		182C6D2320AC542200D8AD5D /* AStarViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AStarViewModel.h; sourceTree = "<group>"; };
+		182C6D2420AC542200D8AD5D /* PathfindingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PathfindingViewController.h; sourceTree = "<group>"; };
+		182C6D2520AC542200D8AD5D /* AStar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AStar.h; sourceTree = "<group>"; };
+		182C6D2620AC542200D8AD5D /* AStarViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AStarViewModel.m; sourceTree = "<group>"; };
+		182C6D2720AC542200D8AD5D /* AFindMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFindMap.h; sourceTree = "<group>"; };
+		182C6D2820AC542200D8AD5D /* DFS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFS.m; sourceTree = "<group>"; };
+		182C6D2920AC542200D8AD5D /* BFS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFS.h; sourceTree = "<group>"; };
+		182C6D2A20AC542200D8AD5D /* Dijkstra.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Dijkstra.m; sourceTree = "<group>"; };
+		182C6D2B20AC542200D8AD5D /* PathfindingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PathfindingViewController.m; sourceTree = "<group>"; };
+		182C6D2C20AC542200D8AD5D /* DFS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFS.h; sourceTree = "<group>"; };
+		182C6D2D20AC542200D8AD5D /* AStar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AStar.m; sourceTree = "<group>"; };
+		182C6D2E20AC542200D8AD5D /* BFS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFS.m; sourceTree = "<group>"; };
+		7912146A25A321B0CA2CA74C /* Pods_AStarDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AStarDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF9BEC66492A6969B837FAD9 /* Pods-AStarDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AStarDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AStarDemo/Pods-AStarDemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6DB0EA39C02FE39197F17AA1 /* Pods_AStarDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +65,8 @@
 			children = (
 				182C6CF720ABC4BB00D8AD5D /* AStarDemo */,
 				182C6CF620ABC4BB00D8AD5D /* Products */,
+				8538DD14B958FCDB267FAA1C /* Pods */,
+				7286CA9950E100BC6768E506 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,17 +81,53 @@
 		182C6CF720ABC4BB00D8AD5D /* AStarDemo */ = {
 			isa = PBXGroup;
 			children = (
+				182C6D3620AC542900D8AD5D /* Pathfinding */,
+				182C6D2320AC542200D8AD5D /* AStarViewModel.h */,
+				182C6D2620AC542200D8AD5D /* AStarViewModel.m */,
 				182C6CF820ABC4BB00D8AD5D /* AppDelegate.h */,
 				182C6CF920ABC4BB00D8AD5D /* AppDelegate.m */,
-				182C6CFB20ABC4BB00D8AD5D /* ViewController.h */,
-				182C6CFC20ABC4BB00D8AD5D /* ViewController.m */,
-				182C6CFE20ABC4BB00D8AD5D /* Main.storyboard */,
 				182C6D0120ABC4BC00D8AD5D /* Assets.xcassets */,
 				182C6D0320ABC4BC00D8AD5D /* LaunchScreen.storyboard */,
 				182C6D0620ABC4BC00D8AD5D /* Info.plist */,
 				182C6D0720ABC4BC00D8AD5D /* main.m */,
 			);
 			path = AStarDemo;
+			sourceTree = "<group>";
+		};
+		182C6D3620AC542900D8AD5D /* Pathfinding */ = {
+			isa = PBXGroup;
+			children = (
+				182C6D2420AC542200D8AD5D /* PathfindingViewController.h */,
+				182C6D2B20AC542200D8AD5D /* PathfindingViewController.m */,
+				182C6D2720AC542200D8AD5D /* AFindMap.h */,
+				182C6D2220AC542200D8AD5D /* AFindMap.m */,
+				182C6D2520AC542200D8AD5D /* AStar.h */,
+				182C6D2D20AC542200D8AD5D /* AStar.m */,
+				182C6D2920AC542200D8AD5D /* BFS.h */,
+				182C6D2E20AC542200D8AD5D /* BFS.m */,
+				182C6D2C20AC542200D8AD5D /* DFS.h */,
+				182C6D2820AC542200D8AD5D /* DFS.m */,
+				182C6D2120AC542200D8AD5D /* Dijkstra.h */,
+				182C6D2A20AC542200D8AD5D /* Dijkstra.m */,
+			);
+			path = Pathfinding;
+			sourceTree = "<group>";
+		};
+		7286CA9950E100BC6768E506 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7912146A25A321B0CA2CA74C /* Pods_AStarDemo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8538DD14B958FCDB267FAA1C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AF9BEC66492A6969B837FAD9 /* Pods-AStarDemo.debug.xcconfig */,
+				03039108CD8FBC009949079F /* Pods-AStarDemo.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -78,9 +137,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 182C6D0B20ABC4BC00D8AD5D /* Build configuration list for PBXNativeTarget "AStarDemo" */;
 			buildPhases = (
+				BE6749E8818FCE6896BA0107 /* [CP] Check Pods Manifest.lock */,
 				182C6CF120ABC4BB00D8AD5D /* Sources */,
 				182C6CF220ABC4BB00D8AD5D /* Frameworks */,
 				182C6CF320ABC4BB00D8AD5D /* Resources */,
+				0BFBF76457266DA1C177741B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -130,18 +191,62 @@
 			files = (
 				182C6D0520ABC4BC00D8AD5D /* LaunchScreen.storyboard in Resources */,
 				182C6D0220ABC4BC00D8AD5D /* Assets.xcassets in Resources */,
-				182C6D0020ABC4BB00D8AD5D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0BFBF76457266DA1C177741B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-AStarDemo/Pods-AStarDemo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AStarDemo/Pods-AStarDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BE6749E8818FCE6896BA0107 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AStarDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		182C6CF120ABC4BB00D8AD5D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				182C6CFD20ABC4BB00D8AD5D /* ViewController.m in Sources */,
+				182C6D3320AC542300D8AD5D /* PathfindingViewController.m in Sources */,
+				182C6D2F20AC542300D8AD5D /* AFindMap.m in Sources */,
+				182C6D3420AC542300D8AD5D /* AStar.m in Sources */,
+				182C6D3220AC542300D8AD5D /* Dijkstra.m in Sources */,
+				182C6D3020AC542300D8AD5D /* AStarViewModel.m in Sources */,
+				182C6D3120AC542300D8AD5D /* DFS.m in Sources */,
+				182C6D3520AC542300D8AD5D /* BFS.m in Sources */,
 				182C6D0820ABC4BC00D8AD5D /* main.m in Sources */,
 				182C6CFA20ABC4BB00D8AD5D /* AppDelegate.m in Sources */,
 			);
@@ -150,14 +255,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		182C6CFE20ABC4BB00D8AD5D /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				182C6CFF20ABC4BB00D8AD5D /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		182C6D0320ABC4BC00D8AD5D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -281,6 +378,7 @@
 		};
 		182C6D0C20ABC4BC00D8AD5D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AF9BEC66492A6969B837FAD9 /* Pods-AStarDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -297,6 +395,7 @@
 		};
 		182C6D0D20ABC4BC00D8AD5D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 03039108CD8FBC009949079F /* Pods-AStarDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
