@@ -46,7 +46,7 @@
     for (MoveStep *step in map.allSteps) {
         NSString *key = [NSString stringWithFormat:@"%lu_%lu", (unsigned long)node.row + step.row, (unsigned long)node.col + step.col];
         PathFindNode *nearNode = map.nodesDic[key];
-        if (nearNode && !nearNode.isObstacle && ![openedList containsObject:nearNode]) {
+        if (nearNode && !nearNode.isObstacle && ![openedList containsObject:nearNode] && ![closedList containsObject:nearNode]) {
             nearNode.parent = node;
             nearNode.parentDirection = [PathFindMap parentDirectionWithStep:step];
             [openedList insertObject:nearNode atIndex:0];

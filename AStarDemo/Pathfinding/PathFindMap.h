@@ -8,17 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
-typedef NS_OPTIONS(NSUInteger, NodeDirection) {
-    NodeDirectionNone        = 0,
-    NodeDirectionTop         = 1 << 0,
-    NodeDirectionLeftTop     = 1 << 1,
-    NodeDirectionLeft        = 1 << 2,
-    NodeDirectionLeftBottom  = 1 << 3,
-    NodeDirectionBottom      = 1 << 4,
-    NodeDirectionRightBottom = 1 << 5,
-    NodeDirectionRight       = 1 << 6,
-    NodeDirectionRightTop    = 1 << 7,
-    NodeDirectionAll         = NodeDirectionTop | NodeDirectionLeftTop | NodeDirectionLeft | NodeDirectionLeftBottom | NodeDirectionBottom | NodeDirectionRightBottom | NodeDirectionRight | NodeDirectionRightTop
+typedef NS_ENUM(NSUInteger, NodeDirection) {
+    NodeDirectionNone,
+    NodeDirectionTop,
+    NodeDirectionLeftTop,
+    NodeDirectionLeft,
+    NodeDirectionLeftBottom,
+    NodeDirectionBottom,
+    NodeDirectionRightBottom,
+    NodeDirectionRight,
+    NodeDirectionRightTop
 };
 
 @interface MoveStep : NSObject
