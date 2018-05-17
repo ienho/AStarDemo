@@ -3,19 +3,19 @@
 //  IANLearn
 //
 //  Created by iMAC_HYH on 2018/5/7.
-//  Copyright © 2018年 cdeledu. All rights reserved.
+//  Copyright © 2018年 ian.Devs. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
-@class AFindMap, AStarNode;
+@class PathFindMap, PathFindNode;
 
 @interface BFS : NSObject
 
-+ (BOOL)findPathWithMap:(AFindMap *)map
-                  start:(AStarNode *)start
-                    end:(AStarNode *)end
-             closedList:(NSMutableArray<AStarNode *> *)closedList
-             openedList:(NSMutableArray<AStarNode *> *)openedList;
++ (BOOL)findPathWithMap:(PathFindMap *)map
+                  start:(PathFindNode *)start
+                    end:(PathFindNode *)end
+             closedList:(NSMutableArray<PathFindNode *> *)closedList
+             openedList:(NSMutableArray<PathFindNode *> *)openedList;
 
 @end

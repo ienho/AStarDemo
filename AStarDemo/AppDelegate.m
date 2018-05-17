@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "PathfindingViewController.h"
+#import "PathFindViewController.h"
 
 @interface AppDelegate ()
 
@@ -15,14 +15,14 @@
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     application.statusBarHidden = NO;
     application.statusBarStyle = UIStatusBarStyleLightContent;
-    PathfindingViewController *vc = [PathfindingViewController new];
+    PathFindViewController *vc = [PathFindViewController new];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
-    self.window.rootViewController = vc;
+    self.window.rootViewController = nav;
     [self.window makeKeyAndVisible];
     return YES;
 }

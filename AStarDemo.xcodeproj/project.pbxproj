@@ -11,13 +11,13 @@
 		182C6D0220ABC4BC00D8AD5D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 182C6D0120ABC4BC00D8AD5D /* Assets.xcassets */; };
 		182C6D0520ABC4BC00D8AD5D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 182C6D0320ABC4BC00D8AD5D /* LaunchScreen.storyboard */; };
 		182C6D0820ABC4BC00D8AD5D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 182C6D0720ABC4BC00D8AD5D /* main.m */; };
-		182C6D2F20AC542300D8AD5D /* AFindMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 182C6D2220AC542200D8AD5D /* AFindMap.m */; };
-		182C6D3020AC542300D8AD5D /* AStarViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 182C6D2620AC542200D8AD5D /* AStarViewModel.m */; };
+		182C6D2F20AC542300D8AD5D /* PathFindMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 182C6D2220AC542200D8AD5D /* PathFindMap.m */; };
+		182C6D3020AC542300D8AD5D /* PathFindViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 182C6D2620AC542200D8AD5D /* PathFindViewModel.m */; };
 		182C6D3120AC542300D8AD5D /* DFS.m in Sources */ = {isa = PBXBuildFile; fileRef = 182C6D2820AC542200D8AD5D /* DFS.m */; };
-		182C6D3220AC542300D8AD5D /* Dijkstra.m in Sources */ = {isa = PBXBuildFile; fileRef = 182C6D2A20AC542200D8AD5D /* Dijkstra.m */; };
-		182C6D3320AC542300D8AD5D /* PathfindingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 182C6D2B20AC542200D8AD5D /* PathfindingViewController.m */; };
+		182C6D3320AC542300D8AD5D /* PathFindViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 182C6D2B20AC542200D8AD5D /* PathFindViewController.m */; };
 		182C6D3420AC542300D8AD5D /* AStar.m in Sources */ = {isa = PBXBuildFile; fileRef = 182C6D2D20AC542200D8AD5D /* AStar.m */; };
 		182C6D3520AC542300D8AD5D /* BFS.m in Sources */ = {isa = PBXBuildFile; fileRef = 182C6D2E20AC542200D8AD5D /* BFS.m */; };
+		184E3F9920AD145A002E8381 /* PathFindNodeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 184E3F9820AD145A002E8381 /* PathFindNodeButton.m */; };
 		6DB0EA39C02FE39197F17AA1 /* Pods_AStarDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7912146A25A321B0CA2CA74C /* Pods_AStarDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -30,20 +30,20 @@
 		182C6D0420ABC4BC00D8AD5D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		182C6D0620ABC4BC00D8AD5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		182C6D0720ABC4BC00D8AD5D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		182C6D2120AC542200D8AD5D /* Dijkstra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dijkstra.h; sourceTree = "<group>"; };
-		182C6D2220AC542200D8AD5D /* AFindMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFindMap.m; sourceTree = "<group>"; };
-		182C6D2320AC542200D8AD5D /* AStarViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AStarViewModel.h; sourceTree = "<group>"; };
-		182C6D2420AC542200D8AD5D /* PathfindingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PathfindingViewController.h; sourceTree = "<group>"; };
+		182C6D2220AC542200D8AD5D /* PathFindMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PathFindMap.m; sourceTree = "<group>"; };
+		182C6D2320AC542200D8AD5D /* PathFindViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PathFindViewModel.h; sourceTree = "<group>"; };
+		182C6D2420AC542200D8AD5D /* PathFindViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PathFindViewController.h; sourceTree = "<group>"; };
 		182C6D2520AC542200D8AD5D /* AStar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AStar.h; sourceTree = "<group>"; };
-		182C6D2620AC542200D8AD5D /* AStarViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AStarViewModel.m; sourceTree = "<group>"; };
-		182C6D2720AC542200D8AD5D /* AFindMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFindMap.h; sourceTree = "<group>"; };
+		182C6D2620AC542200D8AD5D /* PathFindViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PathFindViewModel.m; sourceTree = "<group>"; };
+		182C6D2720AC542200D8AD5D /* PathFindMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PathFindMap.h; sourceTree = "<group>"; };
 		182C6D2820AC542200D8AD5D /* DFS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFS.m; sourceTree = "<group>"; };
 		182C6D2920AC542200D8AD5D /* BFS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFS.h; sourceTree = "<group>"; };
-		182C6D2A20AC542200D8AD5D /* Dijkstra.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Dijkstra.m; sourceTree = "<group>"; };
-		182C6D2B20AC542200D8AD5D /* PathfindingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PathfindingViewController.m; sourceTree = "<group>"; };
+		182C6D2B20AC542200D8AD5D /* PathFindViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PathFindViewController.m; sourceTree = "<group>"; };
 		182C6D2C20AC542200D8AD5D /* DFS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFS.h; sourceTree = "<group>"; };
 		182C6D2D20AC542200D8AD5D /* AStar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AStar.m; sourceTree = "<group>"; };
 		182C6D2E20AC542200D8AD5D /* BFS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFS.m; sourceTree = "<group>"; };
+		184E3F9720AD145A002E8381 /* PathFindNodeButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PathFindNodeButton.h; sourceTree = "<group>"; };
+		184E3F9820AD145A002E8381 /* PathFindNodeButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PathFindNodeButton.m; sourceTree = "<group>"; };
 		7912146A25A321B0CA2CA74C /* Pods_AStarDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AStarDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF9BEC66492A6969B837FAD9 /* Pods-AStarDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AStarDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AStarDemo/Pods-AStarDemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -82,8 +82,12 @@
 			isa = PBXGroup;
 			children = (
 				182C6D3620AC542900D8AD5D /* Pathfinding */,
-				182C6D2320AC542200D8AD5D /* AStarViewModel.h */,
-				182C6D2620AC542200D8AD5D /* AStarViewModel.m */,
+				182C6D2420AC542200D8AD5D /* PathFindViewController.h */,
+				182C6D2B20AC542200D8AD5D /* PathFindViewController.m */,
+				184E3F9720AD145A002E8381 /* PathFindNodeButton.h */,
+				184E3F9820AD145A002E8381 /* PathFindNodeButton.m */,
+				182C6D2320AC542200D8AD5D /* PathFindViewModel.h */,
+				182C6D2620AC542200D8AD5D /* PathFindViewModel.m */,
 				182C6CF820ABC4BB00D8AD5D /* AppDelegate.h */,
 				182C6CF920ABC4BB00D8AD5D /* AppDelegate.m */,
 				182C6D0120ABC4BC00D8AD5D /* Assets.xcassets */,
@@ -97,18 +101,14 @@
 		182C6D3620AC542900D8AD5D /* Pathfinding */ = {
 			isa = PBXGroup;
 			children = (
-				182C6D2420AC542200D8AD5D /* PathfindingViewController.h */,
-				182C6D2B20AC542200D8AD5D /* PathfindingViewController.m */,
-				182C6D2720AC542200D8AD5D /* AFindMap.h */,
-				182C6D2220AC542200D8AD5D /* AFindMap.m */,
+				182C6D2720AC542200D8AD5D /* PathFindMap.h */,
+				182C6D2220AC542200D8AD5D /* PathFindMap.m */,
 				182C6D2520AC542200D8AD5D /* AStar.h */,
 				182C6D2D20AC542200D8AD5D /* AStar.m */,
 				182C6D2920AC542200D8AD5D /* BFS.h */,
 				182C6D2E20AC542200D8AD5D /* BFS.m */,
 				182C6D2C20AC542200D8AD5D /* DFS.h */,
 				182C6D2820AC542200D8AD5D /* DFS.m */,
-				182C6D2120AC542200D8AD5D /* Dijkstra.h */,
-				182C6D2A20AC542200D8AD5D /* Dijkstra.m */,
 			);
 			path = Pathfinding;
 			sourceTree = "<group>";
@@ -240,11 +240,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				182C6D3320AC542300D8AD5D /* PathfindingViewController.m in Sources */,
-				182C6D2F20AC542300D8AD5D /* AFindMap.m in Sources */,
+				182C6D3320AC542300D8AD5D /* PathFindViewController.m in Sources */,
+				182C6D2F20AC542300D8AD5D /* PathFindMap.m in Sources */,
+				184E3F9920AD145A002E8381 /* PathFindNodeButton.m in Sources */,
 				182C6D3420AC542300D8AD5D /* AStar.m in Sources */,
-				182C6D3220AC542300D8AD5D /* Dijkstra.m in Sources */,
-				182C6D3020AC542300D8AD5D /* AStarViewModel.m in Sources */,
+				182C6D3020AC542300D8AD5D /* PathFindViewModel.m in Sources */,
 				182C6D3120AC542300D8AD5D /* DFS.m in Sources */,
 				182C6D3520AC542300D8AD5D /* BFS.m in Sources */,
 				182C6D0820ABC4BC00D8AD5D /* main.m in Sources */,

@@ -1,24 +1,24 @@
 //
-//  AFindMap.m
+//  PathFindMap.m
 //  IANLearn
 //
 //  Created by iMAC_HYH on 2018/5/4.
-//  Copyright © 2018年 cdeledu. All rights reserved.
+//  Copyright © 2018年 ian.Devs. All rights reserved.
 //
 
-#import "AFindMap.h"
+#import "PathFindMap.h"
 
-@implementation AStarNode
+@implementation PathFindNode
 
 + (instancetype)nodeWithRow:(NSUInteger)row col:(NSUInteger)col {
-    AStarNode *node = [AStarNode new];
+    PathFindNode *node = [PathFindNode new];
     node.row = row;
     node.col = col;
     return node;
 }
 
 - (BOOL)isEqual:(id)object {
-    if (![object isKindOfClass:[AStarNode class]]) {
+    if (![object isKindOfClass:[PathFindNode class]]) {
         return NO;
     }
     
@@ -26,7 +26,7 @@
         return YES;
     }
     
-    AStarNode *temp = (AStarNode *)object;
+    PathFindNode *temp = (PathFindNode *)object;
     if (temp.row == self.row && temp.col == self.col) {
         return YES;
     }
@@ -47,7 +47,7 @@
 
 @end
 
-@implementation AFindMap
+@implementation PathFindMap
 
 - (instancetype)initWithArray:(NSArray *)array {
     if (self = [super init]) {
@@ -66,11 +66,11 @@
                           Step(0, 1, 10)];  // right
             _rowsCount = array.count;
             _colsCount = ((NSArray *)array.firstObject).count;
-            NSMutableDictionary<NSString *, AStarNode *> *nodesDic = [NSMutableDictionary dictionary];
+            NSMutableDictionary<NSString *, PathFindNode *> *nodesDic = [NSMutableDictionary dictionary];
             for (NSUInteger row = 0; row < array.count; row++) {
                 NSArray *rowArray = array[row];
                 for (NSUInteger col = 0; col < rowArray.count; col++) {
-                    AStarNode *node = [[AStarNode alloc] init];
+                    PathFindNode *node = [[PathFindNode alloc] init];
                     node.row = row;
                     node.col = col;
                     node.isObstacle = [rowArray[col] integerValue] == 1;

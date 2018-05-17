@@ -1,9 +1,9 @@
 //
-//  AFindMap.h
+//  PathFindMap.h
 //  IANLearn
 //
 //  Created by iMAC_HYH on 2018/5/4.
-//  Copyright © 2018年 cdeledu. All rights reserved.
+//  Copyright © 2018年 ian.Devs. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -21,11 +21,6 @@ typedef NS_OPTIONS(NSUInteger, NodeDirection) {
     NodeDirectionAll         = NodeDirectionTop | NodeDirectionLeftTop | NodeDirectionLeft | NodeDirectionLeftBottom | NodeDirectionBottom | NodeDirectionRightBottom | NodeDirectionRight | NodeDirectionRightTop
 };
 
-typedef struct StarCost {
-    NSUInteger costG;
-    NSUInteger costH;
-} StarCost;
-
 @interface MoveStep : NSObject
 
 @property (nonatomic, assign) NSUInteger row;
@@ -38,24 +33,25 @@ typedef struct StarCost {
 
 #define Step(r,c,s) [MoveStep stepWithRow:r col:c cost:s]
 
-@interface AStarNode : NSObject
+@interface PathFindNode : NSObject
 
-@property (nonatomic, strong) AStarNode *parent;
+@property (nonatomic, strong) PathFindNode *parent;
 @property (nonatomic, assign) NodeDirection parentDirection;
 @property (nonatomic, assign) NSUInteger row;
 @property (nonatomic, assign) NSUInteger col;
 @property (nonatomic, assign) BOOL isObstacle;
-@property (nonatomic, assign) StarCost cost;
+@property (nonatomic, assign) NSUInteger costG;
+@property (nonatomic, assign) NSUInteger costH;
 @property (nonatomic, readonly) NSString *key;
 
 + (instancetype)nodeWithRow:(NSUInteger)row col:(NSUInteger)col;
 
 @end
 
-@interface AFindMap : NSObject
+@interface PathFindMap : NSObject
 
 @property NSArray<MoveStep *> *allSteps;
-@property (nonatomic, readonly) NSDictionary<NSString *, AStarNode *> *nodesDic;
+@property (nonatomic, readonly) NSDictionary<NSString *, PathFindNode *> *nodesDic;
 
 @property (nonatomic, readonly) NSUInteger rowsCount;
 @property (nonatomic, readonly) NSUInteger colsCount;

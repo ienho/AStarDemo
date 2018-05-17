@@ -3,20 +3,20 @@
 //  IANLearn
 //
 //  Created by iMAC_HYH on 2018/5/7.
-//  Copyright © 2018年 cdeledu. All rights reserved.
+//  Copyright © 2018年 ian.Devs. All rights reserved.
 //
 
 #import "AStar.h"
 
 @implementation AStar
 
-+ (BOOL)findPathWithMap:(AFindMap *)map
-                  start:(AStarNode *)start
-                    end:(AStarNode *)end
-             closedList:(NSMutableArray<AStarNode *> *)closedList
-             openedList:(NSMutableArray<AStarNode *> *)openedList {
++ (BOOL)findPathWithMap:(PathFindMap *)map
+                  start:(PathFindNode *)start
+                    end:(PathFindNode *)end
+             closedList:(NSMutableArray<PathFindNode *> *)closedList
+             openedList:(NSMutableArray<PathFindNode *> *)openedList {
     
-    AStarNode *cheapNode = start;
+    PathFindNode *cheapNode = start;
     while (cheapNode && cheapNode != end) {
         if (cheapNode) {
             [openedList removeObject:cheapNode];
@@ -36,51 +36,46 @@
     return cheapNode == end;
 }
 
-+ (AStarNode *)findCheapNodeWithMap:(AFindMap *)map
-                             atNode:(AStarNode *)node
-                            endNode:(AStarNode *)endNode
-                        closedNodes:(NSMutableArray<AStarNode *> *)closedNodes
-                        openedNodes:(NSMutableArray<AStarNode *> *)openedNodes {
++ (PathFindNode *)findCheapNodeWithMap:(PathFindMap *)map
+                             atNode:(PathFindNode *)node
+                            endNode:(PathFindNode *)endNode
+                        closedNodes:(NSMutableArray<PathFindNode *> *)closedNodes
+                        openedNodes:(NSMutableArray<PathFindNode *> *)openedNodes {
     
     if (!node || !map.nodesDic.count) return nil;
     if (![map.nodesDic.allValues containsObject:node]) return nil;
     
     for (MoveStep *step in map.allSteps) {
         NSString *key = [NSString stringWithFormat:@"%lu_%lu", (unsigned long)node.row + step.row, (unsigned long)node.col + step.col];
-        AStarNode *nearNode = map.nodesDic[key];
+        PathFindNode *nearNode = map.nodesDic[key];
         if (nearNode && !nearNode.isObstacle && ![closedNodes containsObject:nearNode]) {
             // calculate the cost
-            NSUInteger tempCostG = node.cost.costG + step.cost;
+            NSUInteger tempCostG = node.costG + step.cost;
             if ([openedNodes containsObject:nearNode]) {
-                if (tempCostG < nearNode.cost.costG) {
+                if (tempCostG < nearNode.costG) {
                     nearNode.parent = node;
-                    StarCost cost;
-                    cost.costG = tempCostG;
-                    cost.costH = nearNode.cost.costH;
-                    nearNode.cost = cost;
-                    nearNode.parentDirection = [AFindMap parentDirectionWithStep:step];
+                    nearNode.costG = tempCostG;
+                    nearNode.parentDirection = [PathFindMap parentDirectionWithStep:step];
                 }
             } else {
                 NSUInteger tempCostH = [AStar estimateCostBetweenNodeA:nearNode nodeB:endNode];
-                StarCost cost;
-                cost.costG = tempCostG;
-                cost.costH = tempCostH;
-                nearNode.cost = cost;
+                nearNode.costG = tempCostG;
+                nearNode.costG = tempCostH;
                 nearNode.parent = node;
-                nearNode.parentDirection = [AFindMap parentDirectionWithStep:step];
+                nearNode.parentDirection = [PathFindMap parentDirectionWithStep:step];
                 [openedNodes addObject:nearNode];
             }
         }
     }
     
     NSUInteger costMin = NSUIntegerMax;
-    AStarNode *cheapNode = nil;
-    for (AStarNode *tempNode in openedNodes) {
+    PathFindNode *cheapNode = nil;
+    for (PathFindNode *tempNode in openedNodes) {
         if ([tempNode isEqual:endNode]) {
             cheapNode = endNode;
             break;
         }
-        NSUInteger cost = tempNode.cost.costG + tempNode.cost.costH;
+        NSUInteger cost = tempNode.costG + tempNode.costH;
         if (cost < costMin) {
             costMin = cost;
             cheapNode = tempNode;
@@ -91,7 +86,7 @@
 }
 
 // estimate the cost
-+ (NSUInteger)estimateCostBetweenNodeA:(AStarNode *)nodeA nodeB:(AStarNode *)nodeB {
++ (NSUInteger)estimateCostBetweenNodeA:(PathFindNode *)nodeA nodeB:(PathFindNode *)nodeB {
     NSUInteger colCost = nodeA.col > nodeB.col? (nodeA.col - nodeB.col) * 10 : (nodeB.col - nodeA.col) * 10;
     if (nodeA.row == nodeB.row) {
         return colCost;

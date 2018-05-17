@@ -1,14 +1,33 @@
 //
-//  AStarViewModel.m
+//  PathFindViewModel.m
 //  IANLearn
 //
 //  Created by iMAC_HYH on 2018/5/3.
-//  Copyright © 2018年 cdeledu. All rights reserved.
+//  Copyright © 2018年 ian.Devs. All rights reserved.
 //
 
-#import "AStarViewModel.h"
+#import "PathFindViewModel.h"
 
-@implementation AStarViewModel
+@implementation PathFindViewModel
+
+- (instancetype)initWithSize:(NSUInteger)size {
+    // empty map
+    NSMutableArray<NSMutableArray *> *mapArray = [NSMutableArray arrayWithCapacity:size];
+    for (int row = 0; row < size; row++) {
+        NSMutableArray *rowArray = [NSMutableArray arrayWithCapacity:size];
+        for (int col = 0; col < size; col++) {
+            [rowArray addObject:@0];
+        }
+        [mapArray addObject:rowArray];
+    }
+    // add random rocks to map
+    for (int i = 0; i < 15; i++) {
+        NSUInteger ranRow = arc4random() % size;
+        NSUInteger ranCol = arc4random() % size;
+        mapArray[ranRow][ranCol] = @1;
+    }
+    return [self initWithArray:mapArray];
+}
 
 - (instancetype)initWithArray:(NSArray *)array {
     if (self = [super init]) {
@@ -17,7 +36,7 @@
             NSArray *rowArray = array[row];
             NSMutableArray *rowViewModels = [NSMutableArray array];
             for (NSUInteger col = 0; col < rowArray.count; col++) {
-                ANodeViewModel *vm = [ANodeViewModel new];
+                PathFindNodeViewModel *vm = [PathFindNodeViewModel new];
                 vm.row = row;
                 vm.col = col;
                 if ([rowArray[col] integerValue] == 1) {
@@ -37,7 +56,7 @@
 - (NSArray *)mapArray {
     NSMutableArray *mapArray = [NSMutableArray array];
     for (int row = 0; row < self.nodeViewModels.count; row++) {
-        NSArray<ANodeViewModel *> *rowViewModels = self.nodeViewModels[row];
+        NSArray<PathFindNodeViewModel *> *rowViewModels = self.nodeViewModels[row];
         NSMutableArray *rowArray = [NSMutableArray array];
         for (int col = 0; col < rowViewModels.count; col++) {
             [rowArray addObject:@(rowViewModels[col].nodeType == ANodeTypeObstancle)];
@@ -49,7 +68,7 @@
 
 @end
 
-@implementation ANodeViewModel
+@implementation PathFindNodeViewModel
 
 - (void)setNodeType:(ANodeType)nodeType {
     _nodeType = nodeType;
