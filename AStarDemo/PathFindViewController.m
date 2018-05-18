@@ -210,11 +210,9 @@ static const NSUInteger kMAP_SIZE = 12;
             break;
     }
     
-    // print
+    // print search area
     for (PathFindNode *node in openedList) {
-        if ([node isEqual:startNode]) {
-            continue;
-        }
+        if ([node isEqual:startNode]) continue;
         NSUInteger row = node.row;
         NSUInteger col = node.col;
         PathFindNodeViewModel *nodeViewModel = self.viewModel.nodeViewModels[row][col];
@@ -222,15 +220,14 @@ static const NSUInteger kMAP_SIZE = 12;
         nodeViewModel.arrowDirection = node.parentDirection;
     }
     for (PathFindNode *node in closedList) {
-        if ([node isEqual:startNode]) {
-            continue;
-        }
+        if ([node isEqual:startNode]) continue;
         NSUInteger row = node.row;
         NSUInteger col = node.col;
         PathFindNodeViewModel *nodeViewModel = self.viewModel.nodeViewModels[row][col];
         if (![node isEqual:endNode]) nodeViewModel.nodeType = ANodeTypeSearch;
         nodeViewModel.arrowDirection = node.parentDirection;
     }
+    // print path
     if (findSuccedd) {
         PathFindNode *node = endNode;
         while (node.parent && ![node.parent isEqual:startNode]) {

@@ -58,7 +58,7 @@
                     nearNode.parentDirection = [PathFindMap parentDirectionWithStep:step];
                 }
             } else {
-                NSUInteger tempCostH = [AStar estimateCostBetweenNodeA:nearNode nodeB:endNode];
+                NSUInteger tempCostH = [AStar estimateCostBetweenNodeA:nearNode nodeB:endNode map:map];
                 nearNode.costG = tempCostG;
                 nearNode.costG = tempCostH;
                 nearNode.parent = node;
@@ -86,19 +86,26 @@
 }
 
 // estimate the cost
-+ (NSUInteger)estimateCostBetweenNodeA:(PathFindNode *)nodeA nodeB:(PathFindNode *)nodeB {
-    NSUInteger colCost = nodeA.col > nodeB.col? (nodeA.col - nodeB.col) * 10 : (nodeB.col - nodeA.col) * 10;
++ (NSUInteger)estimateCostBetweenNodeA:(PathFindNode *)nodeA nodeB:(PathFindNode *)nodeB map:(PathFindMap *)map {
+    NSUInteger colCost = nodeA.col > nodeB.col? (nodeA.col - nodeB.col) : (nodeB.col - nodeA.col);
     if (nodeA.row == nodeB.row) {
-        return colCost;
+        return colCost * 10;
     }
-    NSUInteger rowCost = nodeA.row > nodeB.row? (nodeA.row - nodeB.row) * 10 : (nodeB.row - nodeA.row) * 10;
+    NSUInteger rowCost = nodeA.row > nodeB.row? (nodeA.row - nodeB.row) : (nodeB.row - nodeA.row);
     if (nodeA.col == nodeB.col) {
-        return rowCost;
+        return rowCost * 10;
     }
     
-    NSUInteger costMin = MIN(colCost, rowCost) * 14;
-    NSUInteger costLine = colCost > rowCost? (colCost - rowCost) : (rowCost - colCost);
-    return costLine + costMin;
+    // top/left/bottom/right cost 10
+    if (map.allSteps.count == 4) {
+        return (colCost + rowCost) * 10;
+    } else {
+        // top/left/bottom/right cost 10
+        // left-top/left-bottom/right-top/right-bottom cost 14
+        NSUInteger costDiagonal =  MIN(colCost, rowCost);
+        NSUInteger costLine = colCost > rowCost? (colCost - rowCost) : (rowCost - colCost);
+        return costLine * 10 + costDiagonal * 14;
+    }
 }
 
 @end
