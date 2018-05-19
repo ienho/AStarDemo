@@ -21,7 +21,7 @@ typedef NS_ENUM(NSInteger, PathFindType) {
     PathFindTypeAStar
 };
 
-static const NSUInteger kMAP_SIZE = 12;
+static const NSUInteger kMAP_SIZE = 16;
 
 @interface PathFindViewController ()
 

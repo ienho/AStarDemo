@@ -52,14 +52,6 @@
 - (instancetype)initWithArray:(NSArray *)array {
     if (self = [super init]) {
         if (array && array.count) {
-//            _allSteps = @[Step(-1, 0, 10),  // top
-//                          Step(-1, -1, 14), // left top
-//                          Step(0, -1, 10),  // left
-//                          Step(1, -1, 14),  // left bottom
-//                          Step(1, 0, 10),   // bottom
-//                          Step(1, 1, 14),   // right bottom
-//                          Step(0, 1, 10),   // right
-//                          Step(-1, 1, 14)]; // right top
             _allSteps = @[Step(-1, 0, 10),  // top
                           Step(0, -1, 10),  // left
                           Step(1, 0, 10),   // bottom

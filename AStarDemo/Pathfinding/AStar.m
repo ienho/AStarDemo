@@ -16,35 +16,29 @@
              closedList:(NSMutableArray<PathFindNode *> *)closedList
              openedList:(NSMutableArray<PathFindNode *> *)openedList {
     
-    PathFindNode *cheapNode = start;
-    while (cheapNode && cheapNode != end) {
-        if (cheapNode) {
-            [openedList removeObject:cheapNode];
-            [closedList addObject:cheapNode];
-        }
-        cheapNode = [AStar findCheapNodeWithMap:map
-                                         atNode:cheapNode
-                                        endNode:end
-                                    closedNodes:closedList
-                                    openedNodes:openedList];
-    }
-    if (cheapNode) {
-        [openedList removeObject:cheapNode];
-        [closedList addObject:cheapNode];
-    }
+    [openedList addObject:start];
+    PathFindNode *cheapNode = [AStar findCheapNodeWithEndNode:end closedNodes:closedList openedNodes:openedList];
+    do {
+        [AStar searchAtNode:cheapNode
+                        map:map
+                    endNode:end
+                closedNodes:closedList
+                openedNodes:openedList];
+        cheapNode = [AStar findCheapNodeWithEndNode:end closedNodes:closedList openedNodes:openedList];
+    } while (![cheapNode isEqual:end] && openedList.count != 0);
     
     return cheapNode == end;
 }
 
-+ (PathFindNode *)findCheapNodeWithMap:(PathFindMap *)map
-                             atNode:(PathFindNode *)node
-                            endNode:(PathFindNode *)endNode
-                        closedNodes:(NSMutableArray<PathFindNode *> *)closedNodes
-                        openedNodes:(NSMutableArray<PathFindNode *> *)openedNodes {
-    
-    if (!node || !map.nodesDic.count) return nil;
-    if (![map.nodesDic.allValues containsObject:node]) return nil;
-    
++ (void)searchAtNode:(PathFindNode *)node
+                 map:(PathFindMap *)map
+             endNode:(PathFindNode *)endNode
+         closedNodes:(NSMutableArray<PathFindNode *> *)closedNodes
+         openedNodes:(NSMutableArray<PathFindNode *> *)openedNodes {
+
+    if (!node || !map.nodesDic.count) return;
+    if (![map.nodesDic.allValues containsObject:node]) return;
+  
     for (MoveStep *step in map.allSteps) {
         NSString *key = [NSString stringWithFormat:@"%lu_%lu", (unsigned long)node.row + step.row, (unsigned long)node.col + step.col];
         PathFindNode *nearNode = map.nodesDic[key];
@@ -60,7 +54,7 @@
             } else {
                 NSUInteger tempCostH = [AStar estimateCostBetweenNodeA:nearNode nodeB:endNode map:map];
                 nearNode.costG = tempCostG;
-                nearNode.costG = tempCostH;
+                nearNode.costH = tempCostH;
                 nearNode.parent = node;
                 nearNode.parentDirection = [PathFindMap parentDirectionWithStep:step];
                 [openedNodes addObject:nearNode];
@@ -68,20 +62,22 @@
         }
     }
     
+    [openedNodes removeObject:node];
+    [closedNodes addObject:node];
+}
+
++ (PathFindNode *)findCheapNodeWithEndNode:(PathFindNode *)endNode
+                               closedNodes:(NSMutableArray<PathFindNode *> *)closedNodes
+                               openedNodes:(NSMutableArray<PathFindNode *> *)openedNodes {
     NSUInteger costMin = NSUIntegerMax;
     PathFindNode *cheapNode = nil;
     for (PathFindNode *tempNode in openedNodes) {
-        if ([tempNode isEqual:endNode]) {
-            cheapNode = endNode;
-            break;
-        }
         NSUInteger cost = tempNode.costG + tempNode.costH;
         if (cost < costMin) {
             costMin = cost;
             cheapNode = tempNode;
         }
     }
-    
     return cheapNode;
 }
 
