@@ -22,11 +22,12 @@ Demo演示代码可以点这→ [Demo](https://github.com/ienho/AStarDemo)
 
 ### A~*
 A~* 算法的关键是每走的一步都是选择最短的估价路径节点。`A~*`的搜索过程既不会像`BFS`那样沿着周围海量的搜索，也不会像`DFS`那样可能会绕弯子，因为它每一步都会计算当前到达终点的估价值，所以它往远处搜索是启发式的搜索，通过估价值来启发往哪个方向走
+
 ![每一次都选择周围的看起来距离终点最近的点](https://upload-images.jianshu.io/upload_images/2750155-a30d5a8e40724552.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/360)
 
 图中可以看到A~*每走一步都会去遍历当前点周围路径，然后选择最短(估价最短)的路径往下走。因为估价一般都是假定当前点到终点最短的路径上没有障碍物，一旦这个路径上有障碍物，那么该条路径在搜索到障碍物的时候会发生转向（放弃原有的路径），如下图所示，估价值最短的路径一直是从蓝点到红点垂直往下的路径，当往下走到发现下方是障碍以后，就会从当前路径之外的路径中寻找估价最短的
 
-![Simulator Screen Shot - iPhone 6s Plus - 2018-05-19 at 12.59.34.png](https://upload-images.jianshu.io/upload_images/2750155-5a540720a8f6f594.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/360)
+![A~* 最短路径](https://upload-images.jianshu.io/upload_images/2750155-5a540720a8f6f594.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/360)
 
 ###  A~*算法实现
 
@@ -156,11 +157,11 @@ closedList：已经过的序列
 如果是用来寻找最短路径的话`DFS`是不适合的，
 但也有些极端情况下`DFS`却是遍历最少的
 
-![Simulator Screen Shot - iPhone 6s Plus - 2018-05-19 at 16.33.53.png](https://upload-images.jianshu.io/upload_images/2750155-f1ac62a37a26bed5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/360)
+![BFS广度优先搜索](https://upload-images.jianshu.io/upload_images/2750155-f1ac62a37a26bed5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/360)
 
-![Simulator Screen Shot - iPhone 6s Plus - 2018-05-19 at 16.33.54.png](https://upload-images.jianshu.io/upload_images/2750155-92ffeafe852c0fa4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/360)
+![DFS深度优先搜索](https://upload-images.jianshu.io/upload_images/2750155-92ffeafe852c0fa4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/360)
 
-![Simulator Screen Shot - iPhone 6s Plus - 2018-05-19 at 16.33.55.png](https://upload-images.jianshu.io/upload_images/2750155-a5dd1e8380acff89.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/360)
+![A~* 最短路径](https://upload-images.jianshu.io/upload_images/2750155-a5dd1e8380acff89.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/360)
 
 > 实际应用中这些算法都会经过优化定制来提高效率
 广度优先搜索可以采用双向广度优先搜索，最终是两块搜索区域重叠则搜索完成，这样的话可以减少很多次的遍历；
